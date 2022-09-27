@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { GradoSeccion } from 'src/app/_model/grado-seccion';
 import { Periodo } from 'src/app/_model/periodo';
 import { PeriodoService } from 'src/app/_services/periodo.service';
 
@@ -14,7 +15,7 @@ import { PeriodoService } from 'src/app/_services/periodo.service';
 })
 export class PeriodoComponent implements OnInit {
 
-
+  gradoSeccion!: GradoSeccion;
   dataSource!: MatTableDataSource<Periodo>;
   displayedColumns =['idPeriodo', 'descripcion','fechaInicio','fechaFin','estado','fechaRegistro','acciones']
   periodo!: Periodo[];

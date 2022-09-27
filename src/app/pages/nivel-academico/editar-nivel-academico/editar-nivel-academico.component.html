@@ -1,1 +1,28 @@
-<p>editar-nivel-academico works!</p>
+<div>
+  <mat-form-field >
+      <input matInput placeholder="Nombre Periodo" [(ngModel)]="periodo.descripcion" [disabled]="true">
+  </mat-form-field>
+  <mat-form-field>
+      <input matInput placeholder="Nombre Nivel" [(ngModel)]="nivel.descripcionNivel">
+  </mat-form-field>
+  <mat-form-field>
+      <input matInput placeholder="Turno" [(ngModel)]="nivel.descpricionTurno" >
+  </mat-form-field>
+  <!-- <div fxLayout="row">
+      <mat-form-field fxFlex="40">
+      <input matInput type="number" placeholder="Hora Inicio Clases" [(ngModel)]="nhoraInicio" min="1" max="23">
+      </mat-form-field>
+      <div fxFlex="10"> :</div>
+        <mat-form-field fxFlex="40">
+          <input matInput type="number" placeholder="Minutos Inicio Clases" [(ngModel)]="nminutosInicio" min="1" max="59">
+        </mat-form-field>
+  </div> -->
+  <mat-form-field fxFlex="40">
+    <input matInput placeholder="Hora Inicio Clases" [(ngModel)]="nivel.horaInicio" >
+  </mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Hora Fin Clases" [(ngModel)]="nivel.horaFin" >
+</mat-form-field>
+</div>
+<button mat-raised-button color="primary" (click)="operar()">Aceptar</button>
+<button mat-raised-button color="accent" (click)="cancelar()">Cancelar</button>

@@ -12,7 +12,9 @@ export class NivelService {
 
   nivelCambio = new Subject<Nivel[]>();
   mensajeCambio = new Subject<string>();
-   url:string = `${environment.HOST}/nivel`;
+
+   url:string = `${environment.HOST}/Nivel`;
+
   constructor(private http : HttpClient) { }
 
   listar(){
