@@ -13,7 +13,7 @@ export class NivelService {
   nivelCambio = new Subject<Nivel[]>();
   mensajeCambio = new Subject<string>();
 
-   url:string = `${environment.HOST}/Nivel`;
+   url:string = `${environment.HOST}/nivel`;
 
   constructor(private http : HttpClient) { }
 
@@ -38,5 +38,9 @@ export class NivelService {
   }
   eliminar(id: number) {
     return this.http.delete(`${this.url}/borrar/${id}`);
+  }
+
+  eliminarExamen(nivelId:any){
+    return this.http.delete(`${this.url}/${nivelId}`);
   }
 }

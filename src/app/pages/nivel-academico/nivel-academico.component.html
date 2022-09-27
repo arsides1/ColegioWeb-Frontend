@@ -4,18 +4,15 @@
 
 
   <div class="example-header">
-    <mat-label>Buscar Nivel</mat-label>
+
     <mat-form-field>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Buscar Nivel" #input>
     </mat-form-field>
   </div>
 
   <mat-table [dataSource]="dataSource" matSort>
 
-    <ng-container matColumnDef="idNivel">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> IDNIVEL </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.idNivel}} </mat-cell>
-    </ng-container>
+
 
 
     <ng-container matColumnDef="idPeriodo">
@@ -47,7 +44,7 @@
       <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
       <mat-cell *matCellDef="let row">
         <button mat-button color="primary" (click)="openDialog(row)" >Actualizar</button>
-        <button mat-button color="accent" (click)="eliminar(row)">Eliminar</button>
+        <button mat-button color="accent" (click)="eliminars(row)">Eliminar</button>
       </mat-cell>
     </ng-container>
 

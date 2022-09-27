@@ -17,7 +17,7 @@ import { EditarNivelAcademicoComponent } from './editar-nivel-academico/editar-n
 export class NivelAcademicoComponent implements OnInit {
 
   dataSource!: MatTableDataSource<Nivel>;
-  displayedColumns = ['idNivel', 'idPeriodo', 'descripcionNivel', 'descpricionTurno', 'horaInicio','horaFin'];
+  displayedColumns = [ 'idPeriodo', 'descripcionNivel', 'descpricionTurno', 'horaInicio','horaFin','acciones'];
 
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort!: MatSort;
@@ -62,14 +62,18 @@ applyFilter(event: Event) {
   }
 }
 
-
-
-applyFilters(filterValue: string) {
-  this.dataSource.filter = filterValue.trim().toLowerCase();
-}
 eliminar(nivel: Nivel) {
 
   this.nivelService.eliminar(nivel.idNivel).pipe(switchMap(() => {
+    return this.nivelService.listar();
+  })).subscribe(data => {
+    this.nivelService.nivelCambio.next(data);
+    this.nivelService.mensajeCambio.next("Se elimino");
+  });
+}
+eliminars(nivel: Nivel) {
+
+  this.nivelService.eliminarExamen(nivel.idNivel).pipe(switchMap(() => {
     return this.nivelService.listar();
   })).subscribe(data => {
     this.nivelService.nivelCambio.next(data);

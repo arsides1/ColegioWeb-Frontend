@@ -38,4 +38,8 @@ export class GradoSeccionService {
   eliminar(id: number) {
     return this.http.delete(`${this.url}/borrar/${id}`);
   }
+
+  eliminargrado_Seccion(grado_SeccionId:any){
+    return this.http.delete(`${this.url}/${grado_SeccionId}`);
+  }
 }

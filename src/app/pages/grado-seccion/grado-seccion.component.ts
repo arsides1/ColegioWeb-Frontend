@@ -69,5 +69,16 @@ export class GradoSeccionComponent implements OnInit {
     });
   }
 
+  eliminars(gradoSeccion: GradoSeccion) {
+
+    this.gradoSeccionService.eliminargrado_Seccion(gradoSeccion.idGradoSeccion).pipe(switchMap(() => {
+      return this.gradoSeccionService.listar();
+    })).subscribe(data => {
+      this.gradoSeccionService.gradoSeccionCambio.next(data);
+      this.gradoSeccionService.mensajeCambio.next("Se elimino");
+    });
+  }
+
+
 }
 
