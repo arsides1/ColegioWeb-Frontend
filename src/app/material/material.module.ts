@@ -30,7 +30,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [],
@@ -47,6 +47,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatDialogModule,
 
     FormsModule,
+
+
 
     MatToolbarModule,
     MatIconModule,

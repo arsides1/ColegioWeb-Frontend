@@ -1,0 +1,23 @@
+<div class="body">
+  <div class="login" >
+
+    <form  (ngSubmit)="formSubmit()">
+      <img src="./assets/img/usuario.png" width="50%" />
+      <h1>Login</h1>
+      <mat-form-field class="ancho" appearance="fill">
+        <mat-label>Usuario</mat-label>
+        <input  [(ngModel)] = "loginData.username" name = "username" required  matInput placeholder="Digite su nombre de usuario"/>
+      </mat-form-field>
+
+      <mat-form-field class="ancho" appearance="fill">
+        <mat-label >Contraseña</mat-label>
+        <input [(ngModel)] = "loginData.password" name = "password" required  type="password" matInput placeholder="Digite su contraseña"/>
+      </mat-form-field>
+      <br />
+      <button type="submit" class="ancho button" mat-raised-button color="primary" >
+        Ingresar
+      </button>
+
+    </form>
+  </div>
+</div>
